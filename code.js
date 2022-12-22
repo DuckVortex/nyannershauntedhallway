@@ -376,6 +376,11 @@ let loadPic = new BABYLON.GUI.Image("jumpscare", "https://raw.githubusercontent.
 loadPic.widthInPixels = 2000;
 loadPic.heightInPixels = 1000;
 
+const backupLoad = BABYLON.GUI.Button.CreateSimpleButton("backup", "");
+backupLoad.widthInPixels = 2000;
+backupLoad.heightInPixels = 2000;
+backupLoad.background = "black";
+
 // starting image
 const startPic = BABYLON.GUI.Button.CreateSimpleButton("startpic", "\nYou are trapped in an abandoned hallway, and the VTuber/eldritch horror Nyatasha Nyanners is coming to drain your sanity. Will you survive? \n\nClick and drag with the mouse to look around. \n\nUse the WASD keys to move. \n\nClick on objects to interact with them. \n\nNyanners will attempt to break in through the TV, doors, and toilet. Stop her before it’s too late. Different sounds will alert you to danger, so make sure your sound is on. \n\n\n\n\n\n\n\n\n\nThis game is not designed for mobile devices.\nThanks to SushiKev3d, jimbogies, Brandon Westlake, Aki_Kato, TheFalkonett, 1-3D.com, Elinor Quittner, Citflo, Jochon, and Poly Haven for some of the 3D assets.\nThanks to Nyanners for being a funny pink cat.");
 startPic.widthInPixels = 2000;
@@ -1405,6 +1410,7 @@ var renderLoop = function () {
         // meshes are still loading, display loading screen 
         if(gameMode == -1) {
             gameMode = GAME_LOADING;
+            advancedTexture.addControl(backupLoad);
             advancedTexture.addControl(loadPic);
             advancedTexture.addControl(displayMessage);
         }
@@ -1414,6 +1420,7 @@ var renderLoop = function () {
         gameMode = GAME_START;
         advancedTexture.addControl(startPic);
         advancedTexture.addControl(title);
+        advancedTexture.removeControl(backupLoad);
         advancedTexture.removeControl(loadPic);
         displayMessage.text = "Click anywhere to start.";
         startSound.play();
