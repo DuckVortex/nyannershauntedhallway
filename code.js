@@ -404,7 +404,7 @@ displayMessage.onPointerUpObservable.add(function() {
         advancedTexture.removeControl(title);
         displayMessage.text = "";
         gameMode = GAME_PLAYING;
-        timeOfLastAttack = Date.now() + 5000;
+        timeOfLastAttack = Date.now() + 9000;
         collectSound.play();
     }
 });
