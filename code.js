@@ -20,7 +20,7 @@ const ARM_LOWERING = 3;
 const TOTAL_MESHES = 38;
 
 // minimum delay between attacks
-const MIN_DELAY = 14000;
+const MIN_DELAY = 18000;
 
 // amount by which attack times may vary
 const VARY_DELAY = 8000;
@@ -102,7 +102,7 @@ let itemsFound = 0;
 timeSinceScare = -1;
 
 // the timestamp of the last attack (any of them)
-let timeOfLastAttack = Date.now() + 5000;
+let timeOfLastAttack = Date.now() + 9000;
 
 // The time delay between each attack.
 // Decreases over time as the game gets harder.
@@ -1047,7 +1047,7 @@ function setupGameState() {
     chestOpen = false;
     hasKey = false;
     itemsFound = 0;
-    timeOfLastAttack = Date.now() + 5000;
+    timeOfLastAttack = Date.now() + 9000;
     nextDelay = 5000;
     endingScreenShown = false;
     mggpMat.alpha = 0;
